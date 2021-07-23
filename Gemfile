@@ -44,7 +44,6 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'capybara', '~> 3.35', '>= 3.35.3'
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
-  gem 'factory_girl_rails', '~> 4.9'
   gem 'ffaker', '~> 2.18'
   gem 'letter_opener', '~> 1.7'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
