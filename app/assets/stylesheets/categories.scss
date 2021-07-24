@@ -2,3 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.main-article {
+  min-height: 36rem;
+  background-size: cover;
+}
+
+.title-most-voted-article, .title-most-voted-article:hover {
+  color: #ff8000 !important;
+  background-color: transparent;
+}
+
+.text-most-voted-article, .text-most-voted-article:hover {
+  color: white !important;
+  background-color: transparent;
+}
+
+.category-link-index-page {
+  min-height: 17rem;
+  background-size: cover;
+}
+
+.title-category, .title-category:hover {
+  color: white !important;
+  background-color: transparent;
+}
+
+.title-most-voted-article-bottom, .title-most-voted-article-bottom:hover {
+  color: white !important;
+  background-color: transparent;
+}
