@@ -1,27 +1,33 @@
-<%= form_with(model: category) do |form| %>
-  <% if category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 background-image-forms d-flex justify-content-center align-items-center flex-column pb-5">
+      <div class="p-5 box-form">
+        <h1 class="title-form fw-bolder">New Category</h1>
 
-      <ul>
-        <% category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <%= form_with(model: category) do |form| %>
+          <% if category.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+              <ul>
+                <% category.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="mb-3 field">
+            <%= form.label :name, class: "form-label label-color-white fs-5" %>
+            <%= form.text_field :name, class: "form-control", placeholder: "Put the name of the category" %>
+          </div>
+          <div class="mb-3 field d-flex flex-column">
+            <%= form.label :priority, class: "form-label label-color-white fs-5" %>
+            <%= form.select(:priority, [["Low", 1], ["Medium", 2], ["High", 3]], {}, {class: "form-control form-select"} ) %>
+          </div>
+          <%= form.submit "Create Category" , class: 'btn submit-button mt-2' %>
         <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :priority %>
-    <%= form.number_field :priority %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
