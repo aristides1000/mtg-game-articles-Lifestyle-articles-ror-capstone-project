@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 background-image-forms d-flex justify-content-center align-items-center flex-column pb-5">
+      <div class="p-5 box-form">
+        <h1 class="title-form fw-bolder">Log in</h1>
+
+        <%= form_with(url: session_path, local: true) do |form| %>
+          <div class="mb-3 field">
+            <%= form.label :name, class: "form-label label-color-white fs-5" %>
+            <%= form.text_field :name, class: "form-control", placeholder: "Put your name" %>
+          </div>
+          <%= form.submit "Log In" , class: 'btn submit-button mt-2' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

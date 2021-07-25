@@ -32,11 +32,11 @@
         </li>
         <!--log in menu-->
         <li class="nav-item">
-          <a class="nav-link montserrat-font text-uppercase navbar-link fs-6" href="#">Sign Out</a>
+          <%= link_to 'Sign Out', session_path, method: :delete, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
         </li>
         <!--log out menu-->
         <li class="nav-item">
-          <a class="nav-link montserrat-font text-uppercase navbar-link signout-border-right fs-6" href="#">Log In</a>
+          <%= link_to 'Log In', new_session_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
         </li>
         <!--log out menu-->
         <li class="nav-item">
