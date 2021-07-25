@@ -97,3 +97,13 @@
   left: 0;
   right: 0;
 }
+
+.alert {
+  color: #ff8000 !important;
+  background-color: #614d41;
+}
+
+.notice {
+  color: white !important;
+  background-color: #614d41;
+}

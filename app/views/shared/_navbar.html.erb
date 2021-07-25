@@ -22,26 +22,25 @@
         </li>
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <!--log in menu-->
-        <li class="nav-item">
-          <a class="nav-link montserrat-font text-uppercase navbar-link fs-6" href="#">Name of user</a>
-        </li>
-        <!--log in and log out menu-->
-        <li class="nav-item">
-          <a class="nav-link montserrat-font text-uppercase navbar-link fs-6" href="#">Write an article</a>
-        </li>
-        <!--log in menu-->
-        <li class="nav-item">
-          <%= link_to 'Sign Out', session_path, method: :delete, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
-        </li>
-        <!--log out menu-->
-        <li class="nav-item">
-          <%= link_to 'Log In', new_session_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
-        </li>
-        <!--log out menu-->
-        <li class="nav-item">
-          <%= link_to 'Register', new_user_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
-        </li>
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to current_user.name, root_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link montserrat-font text-uppercase navbar-link fs-6" href="#">Write an article</a>
+          </li>
+          <li class="nav-item">
+          <li class="nav-item">
+            <%= link_to 'Sign Out', session_path, method: :delete, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Log In', new_session_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Register', new_user_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

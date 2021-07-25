@@ -5,8 +5,9 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @categories = Category.all
     user = User.find_by(name: params[:name])
-    if user.name == params[:name] && user
+    if user && user.name == params[:name]
       session[:user_id] = user.id
       redirect_to root_path, flash: { notice: "Hi #{user.name}" }
     else
