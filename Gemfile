@@ -36,6 +36,10 @@ gem 'bullet', group: 'development'
 
 gem 'cloudinary', '~> 1.20'
 
+gem 'image_processing', '~> 1.12', '>= 1.12.1'
+gem 'shrine', '~> 3.4'
+gem 'shrine-cloudinary', '~> 1.1', '>= 1.1.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -49,6 +53,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   gem 'simple_bdd', '~> 0.1.0'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 end
 
 group :development do
