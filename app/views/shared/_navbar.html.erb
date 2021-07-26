@@ -17,9 +17,11 @@
             <%= link_to category.name, category_path(category), class: "nav-link navbar-link fs-6" %>
           </li>
         <% end %>
-        <li class="nav-item montserrat-font text-uppercase">
-          <%= link_to 'New Category', new_category_path, class: "nav-link navbar-link fs-6" %>
-        </li>
+        <% if current_user %>
+          <li class="nav-item montserrat-font text-uppercase">
+            <%= link_to 'New Category', new_category_path, class: "nav-link navbar-link fs-6" %>
+          </li>
+        <% end %>
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <% if current_user %>
