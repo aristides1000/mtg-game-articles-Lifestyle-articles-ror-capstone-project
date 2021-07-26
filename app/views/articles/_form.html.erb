@@ -30,8 +30,8 @@
             <%= form.file_field :image, class: "form-control", placeholder: "Put the text of the article" %>
           </div>
           <div class="mb-3 field">
-            <%= form.label :categories, class: "form-label label-color-white fs-5" %>
-            <%= form.select :categories, @categories.pluck(:name, :id), {}, {class: "form-control form-select"} %>
+            <%= form.label :category, class: "form-label label-color-white fs-5" %>
+            <%= form.select :category, @categories.pluck(:name, :id), {}, {class: "form-control form-select"} %>
           </div>
           <%= form.submit "Create your article" , class: 'btn submit-button mt-2' %>
         <% end %>
