@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   include ImageUploader::Attachment(:image)
-  belongs_to :user
+  belongs_to :user, :optional => true
   has_many :votes, foreign_key: :articleid, class_name: 'Vote', dependent: :destroy
 =begin
   has_many :article_categories, foreign_key: :categoryid
