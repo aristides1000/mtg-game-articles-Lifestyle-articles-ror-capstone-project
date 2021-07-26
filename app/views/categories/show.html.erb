@@ -17,59 +17,20 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between" style="background-image: url(https://images.unsplash.com/photo-1541278107931-e006523892df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1951&q=80)">
-    </div>
-    <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between">
-      <div>
-        <h3 href="#" class="title-category-show mt-3 ms-2 poppins-font fs-5 fw-bolder text-decoration-none"><span class="border-bottom border-warning border-3 pb-1"><%= @category.name %></span></h3>
-        <h5 class="category-description-show mt-3 ms-2">Title of article</h5>
-        <h6 class="category-description-show mt-3 ms-2">Text of article</h6>
+    <% @articles.each do |article| %>
+      <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between" style="background-image: url(https://images.unsplash.com/photo-1541278107931-e006523892df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1951&q=80)">
       </div>
-      <div>
-        <p class="category-description-show mt-3 ms-2 mb-1">Name of Auhor</p>
-        <a class="d-flex align-items-center mb-2 ms-2 poppins-font fs-5 text-decoration-none fw-bolder vote-link" href="#"><ion-icon class="mb-2 me-1" name="add-circle-sharp" size="large"></ion-icon><span class="mb-2 vote-link">0 votes</span></a>
+      <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between">
+        <div>
+          <h3 href="#" class="title-category-show mt-3 ms-2 poppins-font fs-5 fw-bolder text-decoration-none"><span class="border-bottom border-warning border-3 pb-1"><%= @category.name %></span></h3>
+          <h5 class="category-description-show mt-3 ms-2"><%= article.title %></h5>
+          <h6 class="category-description-show mt-3 ms-2"><%= article.text %></h6>
+        </div>
+        <div>
+          <p class="category-description-show mt-3 ms-2 mb-1"><%= article.author.name %></p>
+          <a class="d-flex align-items-center mb-2 ms-2 poppins-font fs-5 text-decoration-none fw-bolder vote-link" href="#"><ion-icon class="mb-2 me-1" name="add-circle-sharp" size="large"></ion-icon><span class="mb-2 vote-link"><%= article.votes.count %> votes</span></a>
+        </div>
       </div>
-    </div>
-    <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between" style="background-image: url(https://images.unsplash.com/photo-1541278107931-e006523892df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1951&q=80)">
-    </div>
-    <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between">
-      <div>
-        <h3 href="#" class="title-category-show mt-3 ms-2 poppins-font fs-5 fw-bolder text-decoration-none"><span class="border-bottom border-warning border-3 pb-1"><%= @category.name %></span></h3>
-        <h5 class="category-description-show mt-3 ms-2">Title of article</h5>
-        <h6 class="category-description-show mt-3 ms-2">Text of article</h6>
-      </div>
-      <div>
-        <p class="category-description-show mt-3 ms-2 mb-1">Name of Auhor</p>
-        <a class="d-flex align-items-center mb-2 ms-2 poppins-font fs-5 text-decoration-none fw-bolder vote-link" href="#"><ion-icon class="mb-2 me-1" name="add-circle-sharp" size="large"></ion-icon><span class="mb-2 vote-link">0 votes</span></a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between">
-      <div>
-        <h3 href="#" class="title-category-show mt-3 ms-2 poppins-font fs-5 fw-bolder text-decoration-none"><span class="border-bottom border-warning border-3 pb-1"><%= @category.name %></span></h3>
-        <h5 class="category-description-show mt-3 ms-2">Title of article</h5>
-        <h6 class="category-description-show mt-3 ms-2">Text of article</h6>
-      </div>
-      <div>
-        <p class="category-description-show mt-3 ms-2 mb-1">Name of Auhor</p>
-        <a class="d-flex align-items-center mb-2 ms-2 poppins-font fs-5 text-decoration-none fw-bolder vote-link" href="#"><ion-icon class="mb-2 me-1" name="add-circle-sharp" size="large"></ion-icon><span class="mb-2 vote-link">0 votes</span></a>
-      </div>
-    </div>
-    <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between" style="background-image: url(https://images.unsplash.com/photo-1541278107931-e006523892df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1951&q=80)">
-    </div>
-    <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between">
-      <div>
-        <h3 href="#" class="title-category-show mt-3 ms-2 poppins-font fs-5 fw-bolder text-decoration-none"><span class="border-bottom border-warning border-3 pb-1"><%= @category.name %></span></h3>
-        <h5 class="category-description-show mt-3 ms-2">Title of article</h5>
-        <h6 class="category-description-show mt-3 ms-2">Text of article</h6>
-      </div>
-      <div>
-        <p class="category-description-show mt-3 ms-2 mb-1">Name of Auhor</p>
-        <a class="d-flex align-items-center mb-2 ms-2 poppins-font fs-5 text-decoration-none fw-bolder vote-link" href="#"><ion-icon class="mb-2 me-1" name="add-circle-sharp" size="large"></ion-icon><span class="mb-2 vote-link">0 votes</span></a>
-      </div>
-    </div>
-    <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between" style="background-image: url(https://images.unsplash.com/photo-1541278107931-e006523892df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1951&q=80)">
-    </div>
+    <% end %>
   </div>
 </div>

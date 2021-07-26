@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_26_162937) do
+ActiveRecord::Schema.define(version: 2021_07_26_205544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "article_categories", force: :cascade do |t|
+    t.bigint "article_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_article_categories_on_article_id"
+    t.index ["category_id"], name: "index_article_categories_on_category_id"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.bigint "author_id"
@@ -23,13 +32,6 @@ ActiveRecord::Schema.define(version: 2021_07_26_162937) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_data"
     t.index ["author_id"], name: "index_articles_on_author_id"
-  end
-
-  create_table "articles_categories", id: false, force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "article_id", null: false
-    t.index ["article_id", "category_id"], name: "index_articles_categories_on_article_id_and_category_id"
-    t.index ["category_id", "article_id"], name: "index_articles_categories_on_category_id_and_article_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -54,6 +56,9 @@ ActiveRecord::Schema.define(version: 2021_07_26_162937) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
-  add_foreign_key "articles_categories", "articles"
-  add_foreign_key "articles_categories", "categories"
+  add_foreign_key "article_categories", "articles"
+  add_foreign_key "article_categories", "categories"
+  add_foreign_key "articles", "users", column: "author_id"
+  add_foreign_key "votes", "articles"
+  add_foreign_key "votes", "users"
 end

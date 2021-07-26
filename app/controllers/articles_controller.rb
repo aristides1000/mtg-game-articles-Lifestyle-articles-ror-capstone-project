@@ -29,6 +29,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        #@article.article_categories.create(category_id: article_category_params)
         format.html { redirect_to root_path, notice: "Article was successfully created." }
         format.json { render :show, status: :created, location: @article }
       else
@@ -68,9 +69,11 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:userid, :title, :text, :image, :categories)
-=begin
-      params.require(:article).permit(:title, :description, category_ids: [])
-=end
+      params.require(:article).permit(:userid, :title, :text, :image, :categoies)
     end
+=begin
+    def article_category_params
+      params.require(:article).permit(:category)
+    end
+=end
 end
