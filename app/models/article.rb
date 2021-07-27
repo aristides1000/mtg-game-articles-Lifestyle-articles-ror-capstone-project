@@ -6,7 +6,8 @@ class Article < ApplicationRecord
   has_many :article_categories, foreign_key: :article_id
   has_many :categories, through: :article_categories
 
-  validates :title, presence: true
+  validates :title, length: { minimum: 10, maximum: 100 }, uniqueness: true
+  validates :title, :text, :image, presence: true
 
   def self.most_voted
     articles = Article.includes(:votes).sort { |a, b| b.votes.count <=> a.votes.count }
