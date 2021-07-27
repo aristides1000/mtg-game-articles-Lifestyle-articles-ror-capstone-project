@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Authorid:</strong>
+  <%= @article.author_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @article.image_url if @article.image %>
+</p>
+
+<% unless current_user.nil? %>
+  <% if current_user.id == @article.author_id %>
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+  <% end %>
+<% end %>
+
+<%= link_to 'Back', root_path %>

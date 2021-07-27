@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand logo-hover" href="#">
+      <%= image_tag "pngwing.com.png", class: "logo-size" %>
+    </a>
+    <%= link_to "MTG Game Articles", root_path, class: "title-link navbar-brand montserrat-font text-uppercase" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0 m-auto">
+        <li class="nav-item montserrat-font text-uppercase">
+          <%= link_to "Home", root_path, class: "nav-link navbar-link fs-6" %>
+        </li>
+        <% @categories.each do |category| %>
+          <li class="nav-item montserrat-font text-uppercase">
+            <%= link_to category.name, category_path(category.id), class: "nav-link navbar-link fs-6" %>
+          </li>
+        <% end %>
+        <% if current_user %>
+          <li class="nav-item montserrat-font text-uppercase">
+            <%= link_to 'New Category', new_category_path, class: "nav-link navbar-link fs-6" %>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to current_user.name, current_user, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Write an article', new_article_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', session_path, method: :delete, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Log In', new_session_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Register', new_user_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

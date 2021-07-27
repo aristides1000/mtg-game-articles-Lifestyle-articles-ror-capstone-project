@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 background-image-forms d-flex justify-content-center align-items-center flex-column pb-5">
+      <div class="p-5 box-form">
+        <h1 class="title-form fw-bolder">Create your user account</h1>
+
+        <%= form_with(model: user) do |form| %>
+          <% if user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+              <ul>
+                <% user.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="mb-3 field">
+            <%= form.label :name, class: "form-label label-color-white fs-5" %>
+            <%= form.text_field :name, class: "form-control", placeholder: "Put your name" %>
+          </div>
+          <%= form.submit "Create your account" , class: 'btn submit-button mt-2' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

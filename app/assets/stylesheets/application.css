@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.title-link-footer,
+.title-link-footer:hover {
+  background-color: transparent;
+  color: #fff !important;
+}
+
+.montserrat-font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.poppins-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+.title-link,
+.title-link:hover {
+  background-color: transparent;
+  color: #ff8000 !important;
+}
+
+.logo-hover:hover:hover {
+  background-color: transparent;
+}
+
+.navbar-link:hover {
+  background-color: transparent;
+  color: #ff8000 !important;
+}
+
+.signout-border-right {
+  border-right: 1px solid #0000008c;
+}
+
+.footer-bg-color {
+  background-color: #614d41;
+}
+
+.logo-size {
+  width: 20px;
+}
+
+.logo-footer {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.logo-hover-footer:hover {
+  background-color: transparent;
+}
+
+.navbar-link-footer,
+.navbar-link-footer:hover {
+  color: #ff8000 !important;
+  background-color: transparent;
+}
+
+.footer-text {
+  color: #fff;
+}
+
+.social-link,
+.social-link:hover {
+  color: #614d41 !important;
+  background-color: #ff8000 !important;
+  width: 20px;
+}
+
+.footer {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.alert {
+  color: #ff8000 !important;
+  background-color: #614d41;
+}
+
+.notice {
+  color: white !important;
+  background-color: #614d41;
+}
+
+.social-links {
+  background-color: #ff8000 !important;
+  border-radius: 50%;
+  color: #614d41;
+}

@@ -1,0 +1,7 @@
+<%= form_with model: [@vote, article.votes.new] do |form| %>
+    <%= form.number_field :user_id, type: :hidden, value: current_user.id %>
+
+    <%= form.number_field :article_id, type: :hidden, value: article.id %>
+
+    <%= form.submit '+', class: "btn btn-outline-success" %>
+<% end %>

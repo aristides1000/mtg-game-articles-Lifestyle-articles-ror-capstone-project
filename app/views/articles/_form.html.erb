@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 background-image-forms d-flex justify-content-center align-items-center flex-column pb-5">
+      <div class="p-5 box-form">
+        <h1 class="title-form fw-bolder">Create an article</h1>
+
+        <%= form_with(model: article) do |form| %>
+          <% if article.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+              <ul>
+                <% article.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= form.hidden_field authorid: current_user.id %>
+          <div class="mb-3 field">
+            <%= form.label :title, class: "form-label label-color-white fs-5" %>
+            <%= form.text_field :title, class: "form-control", placeholder: "Put the title of the article" %>
+          </div>
+          <div class="mb-3 field">
+            <%= form.label :text, class: "form-label label-color-white fs-5" %>
+            <%= form.text_area :text, class: "form-control", placeholder: "Put the text of the article" %>
+          </div>
+          <div class="mb-3 field">
+            <%= form.label :image, class: "form-label label-color-white fs-5" %>
+            <%= form.file_field :image, class: "form-control", placeholder: "Put the text of the article" %>
+          </div>
+          <div class="mb-3 field">
+            <%= form.label :category, class: "form-label label-color-white fs-5" %>
+            <%= form.select :category_id, @categories.pluck(:name, :id), {}, {class: "form-control form-select"} %>
+          </div>
+          <%= form.submit "Create your article" , class: 'btn submit-button mt-2' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

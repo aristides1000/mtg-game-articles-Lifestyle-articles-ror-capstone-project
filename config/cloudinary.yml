@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: mtg-game-articles
+  api_key: '912451281315389'
+  api_secret: OrzIgYViXZTukALRZLOtcvT6e1s
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: mtg-game-articles
+  api_key: '912451281315389'
+  api_secret: OrzIgYViXZTukALRZLOtcvT6e1s
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: mtg-game-articles
+  api_key: '912451281315389'
+  api_secret: OrzIgYViXZTukALRZLOtcvT6e1s
+  enhance_image_tag: true
+  static_file_support: false

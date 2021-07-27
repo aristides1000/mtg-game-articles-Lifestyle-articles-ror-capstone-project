@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-12 main-article d-flex flex-column justify-content-end" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.4) 100%), url(<%= image?(@most_voted) %>)">
+      <% if @most_voted %>
+        <a href="#" class="title-most-voted-article pb-3 ms-3 poppins-font fs-5 fw-bolder text-decoration-none"><%= @most_voted.title %></a>
+        <a href="#" class="text-most-voted-article pb-5 ms-2 poppins-font fs-6 text-decoration-none"><%= @most_voted.text %></a>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <% @categories_bottom.each do |category| %>
+      <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between" style="background-image: linear-gradient(360deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.4) 100%), url(<% category.articles.order("created_at DESC").limit(1).each do |article| %>
+          <%= article.image_url %>
+        <% end %>)">
+        <%= link_to (category.name).capitalize, category_path(category), class: "title-category mt-3 ms-2 poppins-font fs-5 fw-bolder text-decoration-none border-bottom border-warning border-3 pb-1" %>
+        <a href="#" class="title-most-voted-article-bottom pb-5 ms-2 poppins-font fs-5 text-decoration-none fw-bolder">
+        <% category.articles.order("created_at DESC").limit(1).each do |article| %>
+          <%= article.title %>
+        <% end %>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>

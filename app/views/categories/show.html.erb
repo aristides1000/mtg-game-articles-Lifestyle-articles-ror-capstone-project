@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between" style="background-image: url(<%= article.image_url %>)">
+      </div>
+      <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between">
+        <div>
+          <h3 href="#" class="title-category-show mt-3 ms-2 poppins-font fs-5 fw-bolder text-decoration-none"><span class="border-bottom border-warning border-3 pb-1"><%= @category.name %></span></h3>
+          <h5 class="category-description-show mt-3 ms-2"><%= article.title %></h5>
+          <h6 class="category-description-show mt-3 ms-2"><%= article.text %></h6>
+        </div>
+        <div>
+          <p class="category-description-show mt-3 ms-2 mb-1"><%= article.author.name %></p>
+          <%= vote_check(article) %>
+          <span class="mb-2 vote-link"><%= article.votes.count %> votes</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
