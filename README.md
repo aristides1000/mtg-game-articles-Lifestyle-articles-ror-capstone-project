@@ -3,8 +3,9 @@
 # MTG Game Articles - ROR Capstone Project
 
 > The purpose of this project is to consolidate the acquired knowledge of the Ruby on Rails programming language. To do this, make the following application with a compendium of parts necessary for the implementation of a commercial solution.
-> ![screenshot](./app_screenshot.png)
-
+> ![screenshot](./app_screenshot_1.png)
+> ![screenshot](./app_screenshot_2.png)
+> ![screenshot](./app_screenshot_3.png)
 This web page was the Capstone Project for the Ruby on Rails programming language of the Microverse curriculum.
 In this project, I learned the importance of business applications in developing real-world solutions.
 
