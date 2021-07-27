@@ -1,3 +1,5 @@
+# rubocop:disable Bundler/DuplicatedGem
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -32,7 +34,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'simple_form', '~> 5.1'
 
-#gem 'bullet', group: 'development'
+# gem 'bullet', group: 'development'
 
 gem 'cloudinary', '~> 1.20'
 
@@ -44,15 +46,15 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
-  gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
-  gem 'factory_bot_rails', '~> 6.2'
-  gem 'capybara', '~> 3.35', '>= 3.35.3'
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  gem 'capybara', '~> 3.35', '>= 3.35.3'
+  gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+  gem 'factory_bot_rails', '~> 6.2'
   gem 'ffaker', '~> 2.18'
   gem 'letter_opener', '~> 1.7'
-  gem 'simple_bdd', '~> 0.1.0'
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   gem 'shoulda-matchers', '~> 5.0'
-  gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+  gem 'simple_bdd', '~> 0.1.0'
 end
 
 group :development do
@@ -68,17 +70,18 @@ group :development do
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'guard', '~> 2.18'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
-
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
   gem 'database_cleaner', '~> 1.7'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+# rubocop:enable Bundler/DuplicatedGem
