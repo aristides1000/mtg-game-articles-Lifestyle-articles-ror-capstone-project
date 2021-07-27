@@ -32,7 +32,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'simple_form', '~> 5.1'
 
-gem 'bullet', group: 'development'
+#gem 'bullet', group: 'development'
 
 gem 'cloudinary', '~> 1.20'
 
@@ -50,7 +50,6 @@ group :development, :test do
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'ffaker', '~> 2.18'
   gem 'letter_opener', '~> 1.7'
-  gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   gem 'simple_bdd', '~> 0.1.0'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'

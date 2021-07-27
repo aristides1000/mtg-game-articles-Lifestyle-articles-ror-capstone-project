@@ -12,8 +12,8 @@ class CategoriesController < ApplicationController
   def show
     @categories = Category.all
 
-    @category = Category.find(params[:id])
-    @articles = @category.articles
+    @category = @categories.find(params[:id])
+    @articles = @category.articles.includes(:author)
   end
 
   # GET /categories/new
