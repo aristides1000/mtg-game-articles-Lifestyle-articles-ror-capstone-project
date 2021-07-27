@@ -51,7 +51,14 @@ Run the command `rails server` with [Ruby V.3.0.1](https://www.ruby-lang.org/es/
 
 ### Run tests
 
-Linters errors
+> for test formatting add below script in .rspec file
+```
+    rpsec --format documentation
+```
+
+> To run all the tests run below script in the terminal
+
+`rspec`
 
 ## Author
 

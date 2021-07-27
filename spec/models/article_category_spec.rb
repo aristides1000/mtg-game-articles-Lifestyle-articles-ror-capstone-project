@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe ArticleCategory, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'relations' do
+    it 'belongs to a category' do
+      t = ArticleCategory.reflect_on_association(:category)
+      expect(t.macro).to eq(:belongs_to)
+    end
+
+    it 'belongs to an article' do
+      t = ArticleCategory.reflect_on_association(:article)
+      expect(t.macro).to eq(:belongs_to)
+    end
+  end
 end
