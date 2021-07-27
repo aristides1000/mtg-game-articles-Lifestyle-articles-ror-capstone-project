@@ -26,7 +26,7 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         <% if current_user %>
           <li class="nav-item">
-            <%= link_to current_user.name, root_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
+            <%= link_to current_user.name, current_user, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>
           </li>
           <li class="nav-item">
             <%= link_to 'Write an article', new_article_path, class: "nav-link montserrat-font text-uppercase navbar-link fs-6" %>

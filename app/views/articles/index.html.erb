@@ -13,16 +13,20 @@
   </thead>
 
   <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.authorid %></td>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <% unless current_user.nil? %>
+    <% if current_user.id == @article.author_id %>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.author_id %></td>
+          <td><%= article.title %></td>
+          <td><%= article.text %></td>
+          <td><%= link_to 'Show', article %></td>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 

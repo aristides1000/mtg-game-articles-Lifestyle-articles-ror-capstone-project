@@ -9,6 +9,9 @@
   <strong>Articleid:</strong>
   <%= @vote.articleid %>
 </p>
-
-<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<% unless current_user.nil? %>
+  <% if current_user.id == @article.author_id %>
+    <%= link_to 'Edit', edit_vote_path(@vote) %> |
+  <% end %>
+<% end %>
 <%= link_to 'Back', votes_path %>

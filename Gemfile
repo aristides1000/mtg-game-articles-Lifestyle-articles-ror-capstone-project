@@ -1,5 +1,3 @@
-# rubocop:disable Bundler/DuplicatedGem
-
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -46,7 +44,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
-  gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'capybara', '~> 3.35', '>= 3.35.3'
   gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
   gem 'factory_bot_rails', '~> 6.2'
@@ -77,11 +74,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'database_cleaner', '~> 1.7'
-  gem 'shoulda-matchers', '~> 5.0'
   gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-# rubocop:enable Bundler/DuplicatedGem

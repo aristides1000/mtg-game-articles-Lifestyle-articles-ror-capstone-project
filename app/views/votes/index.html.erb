@@ -12,15 +12,19 @@
   </thead>
 
   <tbody>
-    <% @votes.each do |vote| %>
-      <tr>
-        <td><%= vote.userid %></td>
-        <td><%= vote.articleid %></td>
-        <td><%= link_to 'Show', vote %></td>
-        <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
-        <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <% unless current_user.nil? %>
+    <% if current_user.id == @article.author_id %>
+      <% @votes.each do |vote| %>
+        <tr>
+          <td><%= vote.userid %></td>
+          <td><%= vote.articleid %></td>
+          <td><%= link_to 'Show', vote %></td>
+          <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
+          <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 
