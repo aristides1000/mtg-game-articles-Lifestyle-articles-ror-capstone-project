@@ -15,7 +15,11 @@ In this project, I learned the importance of business applications in developing
 
 ## Live Demo
 
-[Live Demo Link](https://glacial-plateau-28694.herokuapp.com/)
+[MTG Game Article](https://glacial-plateau-28694.herokuapp.com/)
+
+## Video Link
+
+[Loom Presentation](https://www.loom.com/share/a80ab88438d143d2a6a19b2d5849351b)
 
 ## Getting Started
 
