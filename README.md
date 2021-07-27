@@ -15,7 +15,7 @@ In this project, I learned the importance of business applications in developing
 
 ## Live Demo
 
-[Live Demo Link](https://afternoon-gorge-29955.herokuapp.com/)
+[Live Demo Link](https://glacial-plateau-28694.herokuapp.com/)
 
 ## Getting Started
 
