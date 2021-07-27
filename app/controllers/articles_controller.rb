@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        #@article.article_categories.create(category_id: article_category_params)
+        @article.article_categories.create(article_category_params)
         format.html { redirect_to root_path, notice: "Article was successfully created." }
         format.json { render :show, status: :created, location: @article }
       else
@@ -38,6 +38,7 @@ class ArticlesController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
@@ -71,9 +72,8 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:userid, :title, :text, :image, :categoies)
     end
-=begin
+
     def article_category_params
-      params.require(:article).permit(:category)
+      params.require(:article).permit(:category_id)
     end
-=end
 end
