@@ -51,9 +51,11 @@ Run the command `rails server` with [Ruby V.3.0.1](https://www.ruby-lang.org/es/
 
 ### Run tests
 
+Please, before performing the tests, follow the steps in the Install section, located above this point in this article.
+
 > for test formatting add below script in .rspec file
 ```
-    rpsec --format documentation
+    rspec --format documentation
 ```
 
 > To run all the tests run below script in the terminal
