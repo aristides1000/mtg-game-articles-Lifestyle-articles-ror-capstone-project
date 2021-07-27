@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @categories_bottom = @categories_in_box = @categories.slice(0, 4)
+    @most_voted = Article.most_voted
   end
 
   # GET /categories/1 or /categories/1.json

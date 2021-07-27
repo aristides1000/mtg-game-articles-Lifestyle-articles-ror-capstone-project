@@ -18,7 +18,7 @@
 <div class="container-fluid">
   <div class="row">
     <% @articles.each do |article| %>
-      <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between" style="background-image: url(https://images.unsplash.com/photo-1541278107931-e006523892df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1951&q=80)">
+      <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between" style="background-image: url(<%= article.image_url %>)">
       </div>
       <div class="col-md-3 category-link-index-page d-flex flex-column justify-content-between">
         <div>
@@ -28,7 +28,8 @@
         </div>
         <div>
           <p class="category-description-show mt-3 ms-2 mb-1"><%= article.author.name %></p>
-          <a class="d-flex align-items-center mb-2 ms-2 poppins-font fs-5 text-decoration-none fw-bolder vote-link" href="#"><ion-icon class="mb-2 me-1" name="add-circle-sharp" size="large"></ion-icon><span class="mb-2 vote-link"><%= article.votes.count %> votes</span></a>
+          <%= vote_check(article) %>
+          <span class="mb-2 vote-link"><%= article.votes.count %> votes</span>
         </div>
       </div>
     <% end %>

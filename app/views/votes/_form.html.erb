@@ -1,27 +1,7 @@
-<%= form_with(model: vote) do |form| %>
-  <% if vote.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(vote.errors.count, "error") %> prohibited this vote from being saved:</h2>
+<%= form_with model: [@vote, article.votes.new] do |form| %>
+    <%= form.number_field :user_id, type: :hidden, value: current_user.id %>
 
-      <ul>
-        <% vote.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= form.number_field :article_id, type: :hidden, value: article.id %>
 
-  <div class="field">
-    <%= form.label :userid %>
-    <%= form.number_field :userid %>
-  </div>
-
-  <div class="field">
-    <%= form.label :articleid %>
-    <%= form.number_field :articleid %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit '+', class: "btn btn-outline-success" %>
 <% end %>

@@ -25,7 +25,7 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       if @vote.save
-        format.html { redirect_to @vote, notice: "Vote was successfully created." }
+        format.html { redirect_to root_path, notice: "Vote was successfully created." }
         format.json { render :show, status: :created, location: @vote }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -64,6 +64,6 @@ class VotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vote_params
-      params.require(:vote).permit(:userid, :articleid)
+      params.require(:vote).permit(:user_id, :article_id)
     end
 end

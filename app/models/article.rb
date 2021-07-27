@@ -7,4 +7,9 @@ class Article < ApplicationRecord
   has_many :categories, through: :article_categories
 
   validates :title, presence: true
+
+  def self.most_voted
+    articles = Article.includes(:votes).sort { |a, b| b.votes.count <=> a.votes.count }
+    articles.first
+  end
 end
